@@ -1,0 +1,26 @@
+[package]
+name = "intent_swap"
+version = "1.0.0"
+authors = ["Intent Protocol Team"]
+
+[addresses]
+intent_swap = "0xbd128d4f1dbb87783658bed4a4046f3811015952110f321863c34f161eb07611"
+
+[dependencies.AptosFramework]
+git = "https://github.com/movementlabsxyz/aptos-core.git"
+rev = "movement"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosStdlib]
+git = "https://github.com/movementlabsxyz/aptos-core.git"
+rev = "movement"
+subdir = "aptos-move/framework/aptos-stdlib"
+
+[dependencies.MoveStdlib]
+git = "https://github.com/movementlabsxyz/aptos-core.git"
+rev = "movement"
+subdir = "aptos-move/framework/move-stdlib"
+
+[dev-dependencies]
+
+[dev-addresses]
