@@ -1,0 +1,24 @@
+{
+    "name": "intent-relayer",
+    "version": "1.0.0",
+    "description": "Relayer service for Movement Intent Swap",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@aptos-labs/ts-sdk": "^1.9.1",
+        "@fastify/cors": "^9.0.1",
+        "axios": "^1.13.2",
+        "chalk": "^4.1.2",
+        "dotenv": "^16.6.1",
+        "fastify": "^4.26.1",
+        "js-sha3": "^0.9.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.16",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3"
+    }
+}
