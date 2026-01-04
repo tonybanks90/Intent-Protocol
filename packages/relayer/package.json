@@ -1,0 +1,25 @@
+{
+  "name": "relayer",
+  "version": "1.0.0",
+  "description": "The off-chain infrastructure responsible for witnessing cross-chain events and signing release authorizations.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "npx tsx scripts/e2e_flow.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^5.2.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^17.2.3",
+    "viem": "^2.43.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
