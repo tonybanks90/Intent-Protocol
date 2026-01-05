@@ -179,3 +179,380 @@
 2026-01-05 12:39:01 packages/intent-swap/package-lock.json - Modified
 2026-01-05 12:39:01 packages/intent-relayer/package-lock.json - Modified
 2026-01-05 12:39:01 .gitignore - Modified
+2026-01-06 14:50:22 docs/research/1inch-fusion/FUSION_SWAP_NOTES.md - Added
+2026-01-06 14:50:22 docs/research/1inch-fusion/README.md - Added
+2026-01-06 14:50:22 docs/research/1inch-fusion/CROSS_CHAIN_TECHNICAL.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/PRICE_ORACLE.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/USER_GUIDE.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/walkthrough.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/ARCHITECTURE.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/RESOLVERS.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/walkthrough_ui.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/implementation_plan_multi_token.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/RELAYER_DESIGN.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/README.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/EXAMPLES.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/TECH_STACK.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/implementation_plan.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/walkthrough_price_oracle.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/SMART_CONTRACTS.md - Added
+2026-01-06 14:50:22 docs/research/moveintentswap/USER_FLOW.md - Added
+2026-01-07 14:49:30 packages/contracts-evm/.gitmodules - Added
+2026-01-07 14:49:30 packages/contracts-evm/foundry.toml - Added
+2026-01-07 14:49:30 packages/contracts-evm/.gitignore - Added
+2026-01-07 14:49:30 packages/contracts-evm/README.md - Added
+2026-01-07 14:49:30 packages/contracts-evm/foundry.lock - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/DepositVault.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/IntentVaultFactory.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/libraries/Clones.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/libraries/ECDSA.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/interfaces/IERC20.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/src/interfaces/IDepositVault.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/LICENSE-MIT - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/RELEASE_CHECKLIST.md - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/foundry.toml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.gitignore - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/CONTRIBUTING.md - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.gitattributes - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/README.md - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/LICENSE-APACHE - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/package.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.git - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.github/dependabot.yml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.github/CODEOWNERS - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.github/workflows/ci.yml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/.github/workflows/sync.yml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdConstants.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/Config.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/safeconsole.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdToml.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdChains.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdAssertions.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdError.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdCheats.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdConfig.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdInvariant.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/Test.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/Base.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdJson.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/LibVariable.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/console.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdUtils.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/Vm.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdMath.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/console2.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/Script.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdStorage.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/StdStyle.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC6909.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC20.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7540.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC165.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7575.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC1155.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC721.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IMulticall3.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/src/interfaces/IERC4626.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdStorage.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/CommonBase.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/Vm.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdError.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdAssertions.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdUtils.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdCheats.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdJson.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/LibVariable.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdConstants.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/Config.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdChains.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdMath.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdToml.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/StdStyle.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/fixtures/test.toml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/fixtures/broadcast.log.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/fixtures/config.toml - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/fixtures/test.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScript.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTestBase.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScriptBase.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTest.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/lib/forge-std/scripts/vm.py - Added
+2026-01-07 14:49:30 packages/contracts-evm/cache/solidity-files-cache.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/test/E2ETest.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/test/IntentVaultFactory.t.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/test/mocks/MockERC20.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/E2ETest.t.sol/E2ETest.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/IERC20.sol/IERC20.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Clones.sol/Clones.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/DepositVault.sol/DepositVault.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdConstants.sol/StdConstants.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Deploy.s.sol/AddRelayerScript.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Deploy.s.sol/DeployScript.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/safeconsole.sol/safeconsole.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdToml.sol/stdToml.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/IntentVaultFactory.sol/IntentVaultFactory.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdChains.sol/StdChains.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdAssertions.sol/StdAssertions.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdError.sol/stdError.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/MockERC20.sol/MockERC20.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdCheats.sol/StdCheats.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdCheats.sol/StdCheatsSafe.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdInvariant.sol/StdInvariant.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Test.sol/Test.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Base.sol/ScriptBase.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Base.sol/TestBase.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Base.sol/CommonBase.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdJson.sol/stdJson.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/console.sol/console.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdUtils.sol/StdUtils.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/ECDSA.sol/ECDSA.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Vm.sol/VmSafe.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Vm.sol/Vm.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdMath.sol/stdMath.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/IDepositVault.sol/IDepositVault.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/Script.sol/Script.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/IMulticall3.sol/IMulticall3.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/build-info/e5aa154aa2c0c057.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/build-info/854bd4dec4e11e57.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdStorage.sol/stdStorageSafe.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdStorage.sol/stdStorage.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/IntentVaultFactory.t.sol/IntentVaultFactoryTest.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/out/StdStyle.sol/StdStyle.json - Added
+2026-01-07 14:49:30 packages/contracts-evm/script/Deploy.s.sol - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/config - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/index - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/HEAD - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/description - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/info/exclude - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/objects/88/8d42dcd903c00f4103f1ae558eb8d1b6e1ea8d - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/post-update.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/fsmonitor-watchman.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/applypatch-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-push.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-merge-commit.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/prepare-commit-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/update.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/commit-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-receive.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-commit.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/push-to-checkout.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-rebase.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/sendemail-validate.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/hooks/pre-applypatch.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/config - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/index - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/packed-refs - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/HEAD - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/description - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/info/exclude - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/refs/remotes/origin/HEAD - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/refs/heads/master - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/logs/HEAD - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/logs/refs/remotes/origin/HEAD - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/logs/refs/heads/master - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/objects/pack/pack-c87cc6b370a5ddceafd5e71c440a1b332eb7fca1.idx - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/objects/pack/pack-c87cc6b370a5ddceafd5e71c440a1b332eb7fca1.rev - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/objects/pack/pack-c87cc6b370a5ddceafd5e71c440a1b332eb7fca1.pack - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/post-update.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/fsmonitor-watchman.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/applypatch-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-push.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-merge-commit.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/prepare-commit-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/update.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/commit-msg.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-receive.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-commit.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/push-to-checkout.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-rebase.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/sendemail-validate.sample - Added
+2026-01-07 14:49:30 packages/contracts-evm/.git/modules/lib/forge-std/hooks/pre-applypatch.sample - Added
+2026-01-08 09:13:35 packages/contracts-movement/README.md - Added
+2026-01-09 12:05:56 packages/contracts-solana/README.md - Added
+2026-01-06 10:10:44 packages/relayer/.env - Added
+2026-01-06 10:10:44 packages/relayer/README.md - Added
+2026-01-06 10:10:44 packages/relayer/scripts/e2e_full.ts - Added
+2026-01-06 10:10:44 packages/relayer/scripts/e2e_flow.ts - Added
+2026-01-06 10:10:44 packages/relayer/tsconfig.json - Added
+2026-01-03 10:00:00 packages/contracts-evm/foundry.toml - Added Granular
+2026-01-03 10:00:00 packages/contracts-evm/.gitmodules - Added Granular
+2026-01-03 10:00:00 packages/contracts-evm/.gitignore - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC1155.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IMulticall3.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/dependabot.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/safeconsole.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdError.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdInvariant.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/Vm.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7575.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Vm.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/LibVariable.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.git - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdStorage.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdChains.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/test.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScript.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdAssertions.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/CommonBase.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdJson.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC20.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC165.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdError.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdToml.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.gitattributes - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/console2.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdMath.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/workflows/ci.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7540.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Config.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/broadcast.log.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/config.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/RELEASE_CHECKLIST.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Base.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdStyle.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC4626.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/LICENSE-APACHE - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/CONTRIBUTING.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdConfig.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdConstants.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/README.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdChains.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/scripts/vm.py - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Script.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdStyle.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/package.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.gitignore - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/foundry.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdStorage.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/CODEOWNERS - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/LICENSE-MIT - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdUtils.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdMath.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTestBase.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC721.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdCheats.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Test.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/Config.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdAssertions.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/workflows/sync.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdConstants.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdCheats.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/console.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/test.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScriptBase.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTest.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC6909.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdJson.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/LibVariable.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdToml.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdUtils.t.sol - Added Granular
+2026-01-03 10:49:00 packages/contracts-evm/foundry.toml - Added Granular
+2026-01-03 11:32:00 packages/contracts-evm/src/interfaces/IERC20.sol - Added Granular
+2026-01-03 11:55:00 packages/contracts-evm/src/interfaces/IDepositVault.sol - Added Granular
+2026-01-03 12:19:00 packages/contracts-evm/src/libraries/Clones.sol - Added Granular
+2026-01-03 12:37:00 packages/contracts-evm/src/libraries/ECDSA.sol - Added Granular
+2026-01-03 13:18:00 packages/contracts-evm/src/DepositVault.sol - Added Granular
+2026-01-03 14:22:00 packages/contracts-evm/src/IntentVaultFactory.sol - Added Granular
+2026-01-03 15:02:00 packages/contracts-evm/test/mocks/MockERC20.sol - Added Granular
+2026-01-03 15:55:00 packages/contracts-evm/test/IntentVaultFactory.t.sol - Added Granular
+2026-01-03 17:05:00 packages/contracts-evm/test/E2ETest.t.sol - Added Granular
+2026-01-03 18:02:00 packages/contracts-evm/script/Deploy.s.sol - Added Granular
+2026-01-04 10:55:00 packages/relayer/tsconfig.json - Added Granular
+2026-01-04 10:55:00 packages/relayer/.env - Added Granular
+2026-01-04 10:55:00 packages/relayer/package.json - Added Granular
+2026-01-04 11:31:00 packages/relayer/README.md - Added Granular
+2026-01-04 12:34:00 packages/relayer/scripts/e2e_full.ts - Added Granular
+2026-01-04 12:34:00 packages/relayer/scripts/e2e_flow.ts - Added Granular
+2026-01-04 14:58:00 packages/contracts-movement/README.md - Added Granular
+2026-01-05 12:00:00 packages/contracts-solana/README.md - Added Granular
+2026-01-03 10:01:00 packages/contracts-evm/foundry.toml - Added Granular
+2026-01-03 10:01:00 packages/contracts-evm/.gitmodules - Added Granular
+2026-01-03 10:01:00 packages/contracts-evm/.gitignore - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdStorage.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC6909.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdChains.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdError.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTestBase.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/workflows/sync.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdCheats.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdAssertions.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdStorage.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/config.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdUtils.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationTest.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/scripts/vm.py - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7540.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC1155.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Base.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/CODEOWNERS - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/console2.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdConstants.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC20.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Config.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/foundry.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdConstants.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdUtils.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Test.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/README.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdMath.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/test.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/Config.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdConfig.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.gitignore - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdCheats.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC721.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/test.toml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdInvariant.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/LibVariable.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/Vm.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Vm.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/dependabot.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/console.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.github/workflows/ci.yml - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC165.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC4626.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/safeconsole.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IERC7575.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdToml.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.gitattributes - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdJson.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdError.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScriptBase.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/StdStyle.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/CommonBase.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdToml.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdAssertions.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/fixtures/broadcast.log.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/package.json - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/.git - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/CONTRIBUTING.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdJson.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdChains.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/RELEASE_CHECKLIST.md - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdMath.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/LibVariable.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/StdStyle.t.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/test/compilation/CompilationScript.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/LICENSE-APACHE - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/Script.sol - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/LICENSE-MIT - Added Granular
+2026-01-03 10:14:00 packages/contracts-evm/lib/forge-std/src/interfaces/IMulticall3.sol - Added Granular
+2026-01-03 10:47:00 packages/contracts-evm/foundry.toml - Added Granular
+2026-01-03 11:28:00 packages/contracts-evm/src/interfaces/IERC20.sol - Added Granular
+2026-01-03 11:46:00 packages/contracts-evm/src/interfaces/IDepositVault.sol - Added Granular
+2026-01-03 12:25:00 packages/contracts-evm/src/libraries/Clones.sol - Added Granular
+2026-01-03 12:41:00 packages/contracts-evm/src/libraries/ECDSA.sol - Added Granular
+2026-01-03 13:22:00 packages/contracts-evm/src/DepositVault.sol - Added Granular
+2026-01-03 14:22:00 packages/contracts-evm/src/IntentVaultFactory.sol - Added Granular
+2026-01-03 15:04:00 packages/contracts-evm/test/mocks/MockERC20.sol - Added Granular
+2026-01-03 16:01:00 packages/contracts-evm/test/IntentVaultFactory.t.sol - Added Granular
+2026-01-03 17:02:00 packages/contracts-evm/test/E2ETest.t.sol - Added Granular
+2026-01-03 18:00:00 packages/contracts-evm/script/Deploy.s.sol - Added Granular
+2026-01-04 11:02:00 packages/relayer/.env - Added Granular
+2026-01-04 11:02:00 packages/relayer/package.json - Added Granular
+2026-01-04 11:02:00 packages/relayer/tsconfig.json - Added Granular
+2026-01-04 11:27:00 packages/relayer/README.md - Added Granular
+2026-01-04 12:34:00 packages/relayer/scripts/e2e_flow.ts - Added Granular
+2026-01-04 12:34:00 packages/relayer/scripts/e2e_full.ts - Added Granular
+2026-01-04 15:04:00 packages/contracts-movement/README.md - Added Granular
+2026-01-05 11:58:00 packages/contracts-solana/README.md - Added Granular
