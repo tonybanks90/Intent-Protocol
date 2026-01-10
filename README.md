@@ -1,60 +1,64 @@
-# Intent Protocol - Frontend
+# Intent Protocol
 
-Web application for interacting with Intent Protocol.
+Cross-chain intent protocol for instant bridging to Movement Network.
 
-## Structure
+## 🏗️ Project Structure
 
 ```
-frontend/
-├── src/
-│   ├── components/       # React components
-│   │   ├── Bridge/
-│   │   ├── Wallet/
-│   │   └── common/
-│   ├── hooks/            # Custom React hooks
-│   │   ├── useIntent.ts
-│   │   ├── useWallet.ts
-│   │   └── useChain.ts
-│   ├── pages/            # Page components
-│   │   ├── Home.tsx
-│   │   ├── Bridge.tsx
-│   │   ├── LP.tsx
-│   │   └── Resolver.tsx
-│   ├── lib/              # Utilities
-│   │   ├── contracts.ts
-│   │   └── chains.ts
-│   ├── App.tsx
-│   └── main.tsx
-├── public/
-├── package.json
-├── vite.config.ts
-└── tailwind.config.js
+intent-protocol/
+├── packages/
+│   ├── contracts-movement/   # Move contracts (✅ Complete)
+│   ├── contracts-evm/        # Solidity contracts (🚧 Planned)
+│   ├── contracts-solana/     # Anchor programs (🚧 Planned)
+│   ├── relayer/              # Off-chain relay service (🚧 Planned)
+│   └── frontend/             # Web application (🚧 Planned)
+│
+├── docs/
+│   ├── architecture/         # Technical documentation
+│   └── guides/               # User guides
+│
+└── scripts/                  # Root-level scripts
 ```
 
-## Setup
+## 🚀 Quick Start
+
+### Movement Contracts
 
 ```bash
-# Install dependencies
-pnpm install
+cd packages/contracts-movement
 
-# Run development server
-pnpm dev
+# Build
+movement move compile
 
-# Build for production
-pnpm build
+# Test
+movement move test
 
-# Preview production build
-pnpm preview
+# Deploy
+./scripts/deploy.sh
+./scripts/init_protocol.sh
 ```
 
-## Tech Stack
+## 📦 Packages
 
-- **Framework**: React + Vite
-- **Styling**: Tailwind CSS
-- **Wallet**: RainbowKit / Petra
-- **State**: Zustand / TanStack Query
-- **Move SDK**: @aptos-labs/ts-sdk
+| Package | Description | Status |
+|---------|-------------|--------|
+| `contracts-movement` | Core Move contracts | ✅ Complete |
+| `contracts-evm` | Ethereum/BSC/Polygon lock contracts | 🚧 Planned |
+| `contracts-solana` | Solana anchor programs | 🚧 Planned |
+| `relayer` | Off-chain relay service | 🚧 Planned |
+| `frontend` | Web application | 🚧 Planned |
 
-## Status
+## 📚 Documentation
 
-🚧 **Planned** - UI development starting soon
+- [Cross-Chain Architecture](docs/architecture/CROSS_CHAIN_ARCHITECTURE.md)
+- [User Flows](docs/guides/USER_FLOWS.md)
+- [Project Flow](docs/guides/projectflow.md)
+
+## 🧪 Test Results
+
+- **Movement Contracts**: 10/10 tests passing ✅
+- See [Test Results](docs/E2E_TEST_RESULTS_2.md)
+
+## 📄 License
+
+MIT
