@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { useSwap } from '@/context/SwapContext';
 import { formatDistanceToNow } from 'date-fns';
 import axios from 'axios';
 import { TOKENS } from '@/components/intent-swap/forms/TokenSelector';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function ResolverPage() {
     const { relayerUrl } = useSwap();
@@ -14,6 +15,8 @@ export function ResolverPage() {
     const [health, setHealth] = useState<any>(undefined);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 20;
 
     const fetchActivity = async () => {
         setIsLoading(true);
@@ -66,6 +69,14 @@ export function ResolverPage() {
         const val = parseFloat(amount) / Math.pow(10, token.decimals);
         return val.toLocaleString(undefined, { maximumFractionDigits: 4 });
     };
+
+    // Pagination Logic
+    const totalPages = Math.ceil(orders.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedOrders = orders.slice(startIndex, startIndex + itemsPerPage);
+
+    const handlePrevious = () => setCurrentPage(p => Math.max(1, p - 1));
+    const handleNext = () => setCurrentPage(p => Math.min(totalPages, p + 1));
 
     return (
         <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8">
@@ -130,7 +141,7 @@ export function ResolverPage() {
                                         </TableRow>
                                     </TableHeader>
                                     <TableBody>
-                                        {orders.map((order: any, i) => {
+                                        {paginatedOrders.map((order: any, i) => {
                                             const sellToken = getToken(order.intent.sell_token_type);
                                             const buyToken = getToken(order.intent.buy_token_type);
                                             return (
@@ -176,7 +187,7 @@ export function ResolverPage() {
 
                             {/* Mobile Card View */}
                             <div className="md:hidden space-y-4">
-                                {orders.map((order: any, i) => {
+                                {paginatedOrders.map((order: any, i) => {
                                     const sellToken = getToken(order.intent.sell_token_type);
                                     const buyToken = getToken(order.intent.buy_token_type);
                                     return (
@@ -226,6 +237,37 @@ export function ResolverPage() {
                                     );
                                 })}
                             </div>
+
+                            {/* Pagination Controls */}
+                            {totalPages > 1 && (
+                                <div className="flex items-center justify-between pt-6 border-t border-zinc-800">
+                                    <div className="text-sm text-muted-foreground">
+                                        Page {currentPage} of {totalPages}
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            onClick={handlePrevious}
+                                            disabled={currentPage === 1}
+                                            className="h-9 px-3"
+                                        >
+                                            <ChevronLeft className="h-4 w-4 mr-2" />
+                                            Previous
+                                        </Button>
+                                        <Button
+                                            variant="outline"
+                                            size="sm"
+                                            onClick={handleNext}
+                                            disabled={currentPage === totalPages}
+                                            className="h-9 px-3"
+                                        >
+                                            Next
+                                            <ChevronRight className="h-4 w-4 ml-2" />
+                                        </Button>
+                                    </div>
+                                </div>
+                            )}
                         </>
                     )}
                 </CardContent>

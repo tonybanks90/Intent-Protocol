@@ -114,9 +114,30 @@ export function SwapProvider({ children }: { children: ReactNode }) {
             console.log("Transaction Data:", JSON.stringify(transactionData, null, 2));
 
             const response = await adapterSignTransaction(wallet, transactionData);
-            console.log("Transaction Response:", response);
+            console.log("Transaction Response:", JSON.stringify(response, null, 2));
 
-            await client.waitForTransaction({ transactionHash: response.hash });
+            // Robust hash extraction
+            let txHash = "";
+            if (typeof response === 'string') {
+                txHash = response;
+            } else if (response.hash) {
+                txHash = response.hash;
+            } else if (response.transactionHash) {
+                txHash = response.transactionHash;
+            } else if (response.id) {
+                txHash = response.id;
+            } else if (response.args?.hash) {
+                txHash = response.args.hash;
+            }
+
+            if (!txHash) {
+                console.error("Failed to extract transaction hash from response:", response);
+                throw new Error("Invalid transaction response from wallet");
+            }
+
+            console.log("Extracted Hash:", txHash);
+
+            await client.waitForTransaction({ transactionHash: txHash });
             console.log("Transaction Confirmed!");
             await refreshBalance();
         } catch (e) {

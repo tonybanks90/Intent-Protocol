@@ -3,24 +3,33 @@ import { toast } from 'sonner';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ArrowDown, Loader2 } from 'lucide-react';
+import { ArrowDown, Loader2, Wallet } from 'lucide-react';
 import { useSwap } from '../../../context/SwapContext';
 import { TokenSelector, TOKENS } from './TokenSelector';
 import { Token } from '@/types';
 import { PriceService } from '@/lib/pyth';
 import { PriceData } from '@/types';
 
+type SwapStep = 'idle' | 'depositing' | 'signing';
+
 export function SwapCard() {
-    const { buildAndSubmitIntent, isLoading } = useSwap();
+    const { buildAndSubmitIntent, escrowBalance, depositToEscrow, isLoading } = useSwap();
 
     // State
     const [sellToken, setSellToken] = useState<Token>(TOKENS[0]); // MOVE
     const [buyToken, setBuyToken] = useState<Token>(TOKENS[2]); // USDC
     const [sellAmount, setSellAmount] = useState("");
     const [buyAmount, setBuyAmount] = useState("");
+    const [swapStep, setSwapStep] = useState<SwapStep>('idle');
 
     const [prices, setPrices] = useState<Record<string, PriceData>>({});
     const [priceLoading, setPriceLoading] = useState(false);
+
+    // Get escrow balance for sell token
+    const sellTokenEscrowBalance = escrowBalance[sellToken.type] || 0;
+    const sellAmountNum = parseFloat(sellAmount) || 0;
+    const needsDeposit = sellAmountNum > sellTokenEscrowBalance;
+    const depositAmount = needsDeposit ? sellAmountNum - sellTokenEscrowBalance : 0;
 
     // Fetch Prices
     useEffect(() => {
@@ -58,6 +67,25 @@ export function SwapCard() {
     // Handlers
     const handleSwap = async () => {
         try {
+            // Step 1: Check if deposit is needed
+            if (needsDeposit) {
+                setSwapStep('depositing');
+                toast.info(`Depositing ${depositAmount.toFixed(4)} ${sellToken.symbol}...`, {
+                    description: "Please approve the deposit transaction"
+                });
+
+                await depositToEscrow(depositAmount, sellToken.type, sellToken.decimals);
+                toast.success(`Deposited ${depositAmount.toFixed(4)} ${sellToken.symbol}`);
+
+                // Wait for wallet adapter to reset after transaction
+                // Nightly wallet needs time to settle before signing a message
+                toast.info("Syncing wallet state...");
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+
+            // Step 2: Sign and submit intent
+            setSwapStep('signing');
+            toast.info('Please sign the swap intent in your wallet');
             await buildAndSubmitIntent({
                 sellToken: sellToken.type,
                 buyToken: buyToken.type,
@@ -75,9 +103,16 @@ export function SwapCard() {
             setSellAmount("");
         } catch (e: any) {
             console.error(e);
-            toast.error("Swap Failed", {
-                description: e.message || "Unknown error occurred"
-            });
+            // Handle user rejection gracefully
+            if (e.message?.includes('rejected') || e.message?.includes('cancelled') || e.message?.includes('Rejected')) {
+                toast.info("Transaction cancelled");
+            } else {
+                toast.error("Swap Failed", {
+                    description: e.message || "Unknown error occurred"
+                });
+            }
+        } finally {
+            setSwapStep('idle');
         }
     };
 
@@ -85,6 +120,15 @@ export function SwapCard() {
         if (!amount || isNaN(parseFloat(amount))) return "$0.00";
         const price = PriceService.formatPrice(prices[token.symbol]);
         return price ? `$${(parseFloat(amount) * price).toFixed(2)}` : "-";
+    };
+
+    // Button text based on state
+    const getButtonText = () => {
+        if (swapStep === 'depositing') return "Depositing...";
+        if (swapStep === 'signing' || isLoading) return "Signing...";
+        if (!sellAmount) return "Enter an amount";
+        if (needsDeposit) return `Deposit & Swap`;
+        return "Swap";
     };
 
     return (
@@ -104,6 +148,11 @@ export function SwapCard() {
                 <div className="bg-muted/40 p-4 rounded-xl space-y-2 hover:border-gray-500 border border-transparent transition-colors">
                     <div className="flex justify-between mb-1">
                         <span className="text-sm text-muted-foreground">You pay</span>
+                        {/* Escrow Balance */}
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                            <Wallet className="h-3 w-3" />
+                            <span>Escrow: {sellTokenEscrowBalance.toFixed(4)}</span>
+                        </div>
                     </div>
                     <div className="flex gap-4 items-center">
                         <Input
@@ -115,8 +164,15 @@ export function SwapCard() {
                         />
                         <TokenSelector value={sellToken} onSelect={setSellToken} />
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                        {getUsdValue(sellAmount, sellToken)}
+                    <div className="flex justify-between">
+                        <span className="text-sm text-muted-foreground">
+                            {getUsdValue(sellAmount, sellToken)}
+                        </span>
+                        {needsDeposit && sellAmount && (
+                            <span className="text-xs text-yellow-500">
+                                +{depositAmount.toFixed(4)} deposit needed
+                            </span>
+                        )}
                     </div>
                 </div>
 
@@ -163,15 +219,15 @@ export function SwapCard() {
                 <Button
                     className="w-full h-14 text-lg font-semibold rounded-xl"
                     onClick={handleSwap}
-                    disabled={isLoading || !sellAmount || !buyAmount}
+                    disabled={isLoading || swapStep !== 'idle' || !sellAmount || !buyAmount}
                 >
-                    {isLoading ? (
+                    {(isLoading || swapStep !== 'idle') ? (
                         <>
                             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                            Confirming in Wallet...
+                            {getButtonText()}
                         </>
                     ) : (
-                        !sellAmount ? "Enter an amount" : "Swap"
+                        getButtonText()
                     )}
                 </Button>
             </CardFooter>

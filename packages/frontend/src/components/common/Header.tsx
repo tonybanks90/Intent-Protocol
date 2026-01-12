@@ -15,6 +15,7 @@ export function Header() {
 
     const navItems = [
         { name: 'Swap', path: '/swap' },
+        { name: 'Pro', path: '/pro' },
         { name: 'Oracle', path: '/oracle' },
         { name: 'Resolver', path: '/resolver' },
     ];

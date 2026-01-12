@@ -11,6 +11,7 @@ import { Header } from "./components/common/Header"
 import { Footer } from "./components/common/Footer"
 import { ResolverPage } from "./pages/ResolverPage"
 import CrossChainPage from "./pages/CrossChainPage"
+import ProPage from "./pages/ProPage"
 
 function App() {
     useLanguage();
@@ -63,6 +64,13 @@ function App() {
                             <div className="flex flex-col min-h-screen">
                                 <Header />
                                 <CrossChainPage />
+                                <Footer />
+                            </div>
+                        } />
+                        <Route path="/pro" element={
+                            <div className="flex flex-col min-h-screen">
+                                <Header />
+                                <ProPage />
                                 <Footer />
                             </div>
                         } />

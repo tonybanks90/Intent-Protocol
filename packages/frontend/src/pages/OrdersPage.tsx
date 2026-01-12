@@ -67,6 +67,7 @@ export default function OrdersPage() {
                 isLoading={isLoading}
                 onSelectOrder={setSelectedOrder}
                 onCancelOrder={handleCancel}
+                itemsPerPage={20}
             />
 
             <OrderDetails
