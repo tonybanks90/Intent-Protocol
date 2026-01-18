@@ -13,6 +13,9 @@ import { ResolverPage } from "./pages/ResolverPage"
 import CrossChainPage from "./pages/CrossChainPage"
 import ProPage from "./pages/ProPage"
 
+import TermsOfService from '@/pages/TermsOfService';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+
 function App() {
     useLanguage();
     useWallet();
@@ -74,6 +77,8 @@ function App() {
                                 <Footer />
                             </div>
                         } />
+                        <Route path="/terms" element={<TermsOfService />} />
+                        <Route path="/privacy" element={<PrivacyPolicy />} />
                     </Routes>
                 </SwapProvider>
             </div>

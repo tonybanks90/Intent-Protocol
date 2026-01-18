@@ -39,8 +39,8 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold mb-4">Resources</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Github</a></li>
+                            <li><a href="https://move-intent-protocol.gitbook.io/move-intent-protocol-docs" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Documentation</a></li>
+                            <li><a href="https://github.com/Move-Intent-Protocol" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Github</a></li>
                             <li><a href="#" className="hover:text-primary transition-colors">Audit Reports</a></li>
                         </ul>
                     </div>
@@ -48,13 +48,13 @@ export function Footer() {
                     <div>
                         <h4 className="font-bold mb-4">Community</h4>
                         <div className="flex gap-4">
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="https://x.com/intentprotocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                                 <Twitter className="h-5 w-5" />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="https://move-intent-protocol.gitbook.io/move-intent-protocol-docs" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                                 <BookOpen className="h-5 w-5" />
                             </a>
-                            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                            <a href="https://github.com/Move-Intent-Protocol" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                                 <Github className="h-5 w-5" />
                             </a>
                         </div>
@@ -64,8 +64,8 @@ export function Footer() {
                 <div className="pt-8 border-t border-border/40 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
                     <p>© 2026 Intent Protocol. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+                        <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

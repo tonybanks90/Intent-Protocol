@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,9 +16,13 @@ export function EscrowBalance() {
         try {
             await depositToEscrow(parseFloat(amount), selectedToken.type, selectedToken.decimals);
             setAmount("");
-            alert("Deposit Successful!");
+            toast.success("Deposit Successful!", {
+                description: `Successfully deposited ${amount} ${selectedToken.symbol} to escrow.`
+            });
         } catch (e: any) {
-            alert("Deposit Failed: " + e.message);
+            toast.error("Deposit Failed", {
+                description: e.message || "An unexpected error occurred."
+            });
         }
     };
 
