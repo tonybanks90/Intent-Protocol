@@ -27,11 +27,32 @@ const stats = [
 ];
 
 const fills = [
-    { type: 'Sell', amount: '5,000 MOVE', to: 'USDC', time: '2s ago' },
-    { type: 'Buy', amount: '12.5 ETH', to: 'MOVE', time: '5s ago' },
-    { type: 'Sell', amount: '150,000 MOVE', to: 'USDC', time: '8s ago' },
-    { type: 'Buy', amount: '0.5 WBTC', to: 'USDC', time: '12s ago' },
+    { type: 'Sell', amount: '5,000', asset: 'MOVE', to: 'USDC', time: '2s ago' },
+    { type: 'Buy', amount: '12.5', asset: 'ETH', to: 'MOVE', time: '5s ago' },
+    { type: 'Sell', amount: '150,000', asset: 'MOVE', to: 'USDC', time: '8s ago' },
+    { type: 'Buy', amount: '0.5', asset: 'WBTC', to: 'USDC', time: '12s ago' },
 ];
+
+const TokenIcon = ({ symbol }: { symbol: string }) => {
+    const icons: Record<string, string> = {
+        MOVE: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/aptos/assets/0x1/logo.png", // Using Aptos logo as proxy for MOVE for now or generic
+        USDC: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png",
+        ETH: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+        WBTC: "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png"
+    };
+
+    if (symbol === 'MOVE') {
+        return (
+            <div className="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-[8px] font-bold text-black border border-white/10">
+                M
+            </div>
+        );
+    }
+
+    return (
+        <img src={icons[symbol]} alt={symbol} className="w-4 h-4 rounded-full" />
+    );
+};
 
 export const LivePulse = () => {
     return (
@@ -79,11 +100,20 @@ export const LivePulse = () => {
                             >
                                 <div className="flex items-center gap-3">
                                     <CheckCircle2 className="w-4 h-4 text-green-500/50" />
-                                    <span className="text-zinc-300">
+                                    <div className="text-zinc-300 flex items-center gap-2">
                                         <span className={fill.type === 'Buy' ? 'text-green-400' : 'text-red-400'}>{fill.type}</span>
-                                        <span className="mx-1.5 text-zinc-600">·</span>
-                                        {fill.amount} <span className="text-zinc-500">→</span> {fill.to}
-                                    </span>
+                                        <span className="text-zinc-600">·</span>
+                                        <div className="flex items-center gap-1.5">
+                                            <span className="font-mono">{fill.amount}</span>
+                                            <TokenIcon symbol={fill.asset} />
+                                            <span className="text-xs text-muted-foreground">{fill.asset}</span>
+                                        </div>
+                                        <span className="text-zinc-500">→</span>
+                                        <div className="flex items-center gap-1.5">
+                                            <TokenIcon symbol={fill.to} />
+                                            <span className="text-xs text-muted-foreground">{fill.to}</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <span className="text-xs text-zinc-600 font-mono">{fill.time}</span>
                             </motion.div>
