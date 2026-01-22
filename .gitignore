@@ -1,2 +1,5 @@
 .movement/
 build/
+node_modules/
+.env
+*.log
