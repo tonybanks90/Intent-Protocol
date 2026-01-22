@@ -24,10 +24,17 @@ server.get('/activity', async (request, reply) => {
     return { orders: relayer.orderHistory };
 });
 
+server.get('/orders', async (request, reply) => {
+    return {
+        count: relayer.orderBook.getOrdersCount(),
+        orders: relayer.orderBook.getOrders()
+    };
+});
+
 
 server.post('/intents', async (request, reply) => {
     const body: any = request.body;
-    // schema: { intent: {...}, signature: "0x...", publicKey: "0x...", signingNonce: "0x..." }
+    // schema: { intent: {...}, signature: "0x...", publicKey: "0x...", signingNonce: "0x...", intentHash: "0x..." }
 
     if (!body.intent || !body.signature || !body.publicKey || !body.signingNonce) {
         reply.code(400).send({ error: "Missing intent, signature, publicKey, or signingNonce" });
@@ -35,7 +42,7 @@ server.post('/intents', async (request, reply) => {
     }
 
     try {
-        const result = await relayer.submitOrder(body.intent, body.signature, body.publicKey, body.signingNonce);
+        const result = await relayer.submitOrder(body.intent, body.signature, body.publicKey, body.signingNonce, body.intentHash);
         return result;
     } catch (err: any) {
         request.log.error(err);
