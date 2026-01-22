@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useSwap } from '../../../context/SwapContext';
-import { TOKENS, TokenSelector } from '../forms/TokenSelector';
+import { TOKENS } from '../forms/TokenSelector';
 import { Token } from '@/types';
 
 import { cn } from '@/lib/utils';

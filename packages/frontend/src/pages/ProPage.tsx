@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { TradingViewWidget, TokenPairSelector, ProOrderForm, LimitOrderForm, TOKEN_PAIRS, TokenPair } from '@/components/pro';
 import { OrderList, Order } from '@/components/intent-swap/OrderList';
 import { OrderDetails } from '@/components/intent-swap/OrderDetails';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';

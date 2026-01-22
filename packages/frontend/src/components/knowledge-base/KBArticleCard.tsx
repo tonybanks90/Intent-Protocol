@@ -15,7 +15,7 @@ interface KBArticleCardProps {
     tags: string[];
 }
 
-export function KBArticleCard({ id, categoryId, title, summary, date, author, readTime, tags }: KBArticleCardProps) {
+export function KBArticleCard({ id, categoryId, title, summary, author, readTime, tags }: KBArticleCardProps) {
     return (
         <Link to={`/kb/${categoryId}/${id}`} className="block h-full group">
             <Card className="h-full overflow-hidden bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:bg-card/80 flex flex-col">
