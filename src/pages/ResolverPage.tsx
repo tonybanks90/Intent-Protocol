@@ -307,7 +307,7 @@ export function ResolverPage() {
                                                                 <ArrowRight className="w-4 h-4 text-zinc-600" />
                                                                 <div className="flex items-center gap-2">
                                                                     {buyToken.icon && <img src={buyToken.icon} className="w-6 h-6 rounded-full" />}
-                                                                    <span className="font-medium">{formatAmount(order.intent.buy_amount, buyToken)} {buyToken.symbol}</span>
+                                                                    <span className="font-medium">{formatAmount(order.intent.buy_amount || order.intent.end_buy_amount || order.intent.start_buy_amount, buyToken)} {buyToken.symbol}</span>
                                                                 </div>
                                                             </div>
                                                         </TableCell>
@@ -361,7 +361,7 @@ export function ResolverPage() {
                                                     <div className="flex justify-between items-center p-2 bg-black/20 rounded-lg">
                                                         <span className="text-sm text-zinc-400">To</span>
                                                         <div className="flex items-center gap-2">
-                                                            <span className="font-medium">{formatAmount(order.intent.buy_amount, buyToken)} {buyToken.symbol}</span>
+                                                            <span className="font-medium">{formatAmount(order.intent.buy_amount || order.intent.end_buy_amount || order.intent.start_buy_amount, buyToken)} {buyToken.symbol}</span>
                                                             {buyToken.icon && <img src={buyToken.icon} className="w-5 h-5 rounded-full" />}
                                                         </div>
                                                     </div>
