@@ -95,10 +95,7 @@ export function ConnectWalletButton() {
                 )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => changeNetwork(250)}>
-                    Switch to Bardock Testnet
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => changeNetwork(177)}>
-                    Switch to Porto Testnet
+                    Switch to Testnet
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => changeNetwork(126)}>
                     Switch to Mainnet
