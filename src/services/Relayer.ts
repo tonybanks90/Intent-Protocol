@@ -365,7 +365,9 @@ export class RelayerService {
 
             // Add Signature stuff at the end
             baseArgs.push(this.hexToBytes(signatureStr));
-            baseArgs.push(this.hexToBytes(publicKeyStr));
+            // Normalize public key (strip 0x00 prefix if 33 bytes)
+            const normalizedPubKey = this.normalizePublicKey(publicKeyStr);
+            baseArgs.push(this.hexToBytes(normalizedPubKey));
             baseArgs.push(this.hexToBytes(signingNonceStr));
 
             // Suffix logic for FA/Coin variants
@@ -466,11 +468,25 @@ export class RelayerService {
         }
     }
 
-    // Helper
+    // Helper to convert hex to bytes
     private hexToBytes(hex: string): Uint8Array {
         if (!hex) return new Uint8Array();
         hex = hex.replace(/^0x/, '');
         return new Uint8Array(Buffer.from(hex, 'hex'));
+    }
+
+    // Helper to normalize Ed25519 public key (strip 0x00 prefix if 33 bytes)
+    private normalizePublicKey(pubKeyHex: string): string {
+        let hex = pubKeyHex.replace(/^0x/, '');
+        const bytes = Buffer.from(hex, 'hex');
+
+        // Ed25519 public keys are 32 bytes. If 33, first byte is likely a prefix
+        if (bytes.length === 33) {
+            console.log(chalk.yellow(`⚠️  Stripping prefix byte from 33-byte public key`));
+            return '0x' + bytes.subarray(1).toString('hex');
+        }
+
+        return '0x' + hex;
     }
 
     // Token Definitions
